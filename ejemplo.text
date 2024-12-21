@@ -1,0 +1,53 @@
+<?php
+    $name = "summerSun";
+    $apellido = "castro";
+    $edad = 70;
+    $IsOld = $edad > 40;
+    $IsDev = true;
+
+    $OutputAge = match(true){
+        $edad < 2 => "Eres un bebe",
+        $edad < 10 => "Eres un niño",
+        $edad < 18 => "Eres un adolecente",
+        $edad === 18 => "Eres joven aun",
+        $edad < 40 => "Eres un adulto joven",
+        $edad < 60 => "Eres adulto mayor",
+        default => "Hueles mas a madera que a fruta"
+    };
+
+    $BestLenguages = ["Java Script", "Python", "C#", "Java"];
+    $BestLenguages [] = "C"
+?>
+
+
+
+<h1>
+    <?= $name ." ". $apellido . " Edad: $edad". "<hr/>".$OutputAge ?>
+</h1>
+
+<ul>
+    <?php foreach ($BestLenguages as $lenguajes) : ?>
+        <li><?= $lenguajes ?></li>
+    <?php endforeach; ?>
+</ul>
+
+
+<!-- <?php if ($IsOld): ?>
+    <h2>Ya estas ruco bro</h2>
+<?php elseif ($IsDev): ?>
+    <h2>No estas viejo pero desarrollando estas peor</h2>
+<?php else : ?>
+    <h2>Ahuevo!, aun estas joven</h2>
+<?php endif; ?>  -->
+
+<style>
+    :root{
+        color-scheme: light dark;
+    }
+
+    body{
+        display: grid;
+        place-content: center;
+    }
+
+</style>
