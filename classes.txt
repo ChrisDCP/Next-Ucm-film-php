@@ -1,0 +1,25 @@
+<?php
+
+class SuperHero {
+    public function __construct(
+        readonly public string $name, 
+        readonly public array $power, 
+        private $planet)
+    {}
+    public function attack(){
+        return "$this -> name ataca con sus poderes";
+    }
+
+    public function show_all (){
+       return get_object_vars($this);
+    }
+    public function description(){
+        $power = implode(", ", $this->power);
+
+        return "$this->name es un superheroe que viene de $this->planet 
+        y tiene los siguientes superpoderes: $power";
+    }
+}
+
+$hero = new SuperHero("batman", ["ninguno xd", "tiene dinero"], "tierra");
+var_dump($hero->show_all());
